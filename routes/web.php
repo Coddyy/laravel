@@ -17,4 +17,16 @@ Route::get('/', function () {
 });
 Route::get('hello','MyController@index');
 Route::post('submit','MyController@submit');
-Route::get('form','MyController@form');
+//Route::get('form','MyController@form');
+
+Route::get('form', 'FormController@index')->name('Form');
+
+Route::post('FormInsert', 'FormController@insert')->name('FormInsert');
+
+
+
+// Project Routes
+
+Route::get('home', 'MainController@index')->name('home');
+
+// End Project Routes
