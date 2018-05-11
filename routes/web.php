@@ -28,5 +28,7 @@ Route::post('FormInsert', 'FormController@insert')->name('FormInsert');
 // Project Routes
 
 Route::get('home', 'MainController@index')->name('home');
+Route::get('add', 'MainController@add_car_repair')->name('add');
+Route::post('Insert', 'MainController@insert_car_repair')->name('Insert');
 
 // End Project Routes

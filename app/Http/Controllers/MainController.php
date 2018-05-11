@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Main_M as Main_M;
+use Session;
 
 class MainController extends Controller
 {
@@ -12,10 +13,29 @@ class MainController extends Controller
     {
     	return view('project_dashboard');
     }
-    public function insert()
+    public function add_car_repair()
     {
-    	var_dump($_POST);
-    	die();
+        $data['subview']=view('subview.add_car_repair');
+        return view('project_dashboard',$data);
+    }
+    public function insert_car_repair(Request $request)
+    {
+        // echo '<pre>';
+        // print_r($_POST);
+        $post=$request->all();
+        $Main_M= new Main_M();
+        $result=$Main_M->insert($post);
+        if($result)
+        {
+            Session::flash('success_msg', 'Car added successfully');
+        }
+        else
+        {
+            Session::flash('error_msg', 'Car not added!');
+        }
+        $data['subview']=view('subview.add_car_repair');
+        return view('project_dashboard',$data);
+
     }
 }
 ?>
