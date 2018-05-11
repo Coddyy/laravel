@@ -753,9 +753,9 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand"><a>Menu</a>  </li>
+                    <li><a href="{{ route('home') }}">Dashboard</a></li>
+                    <li><a href="{{ route('add') }}">Repair Car</a></li>
                     <li><a href="#">Category</a></li>
-                    <li><a href="#">Repair Car</a></li>
-                    <li><a href="#">No Category</a></li>
                     <li><a href="#">Show All Images</a></li>
                     <li><a href="#">Show Untagged Images </a></li>
                     <li><a href="#">All Submitted</a></li>

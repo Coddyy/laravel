@@ -11,7 +11,8 @@ class MainController extends Controller
     //
     public function index()
     {
-    	return view('project_dashboard');
+    	$data['subview']=view('subview.dashboard_home');
+        return view('project_dashboard',$data);
     }
     public function add_car_repair()
     {
